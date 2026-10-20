@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CheckCircle2, AlertCircle, Loader2, Download, ArrowRight } from 'lucide-react';
 import { ClassScheduleItem, PricingPlan } from '../data/danceData';
+import { supabase } from '../lib/supabase';
 
 interface BookingSectionProps {
   prefilledClass?: ClassScheduleItem | null;
@@ -63,7 +64,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
     return errs;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) {
@@ -72,25 +73,29 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
     }
     setErrors({});
     setIsSubmitting(true);
+    const generatedId = `MH-${Math.floor(100000 + Math.random() * 900000)}`;
 
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      const generatedId = `MH-${Math.floor(100000 + Math.random() * 900000)}`;
-      setBookingRef(generatedId);
+    const { error } = await supabase.from('motion_house_bookings').insert({
+      booking_ref: generatedId,
+      full_name: formData.fullName.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      dance_style: formData.danceStyle,
+      day_and_time: formData.dayAndTime,
+      experience_level: formData.experienceLevel,
+      membership_option: formData.membershipOption,
+      notes: formData.notes || '',
+    });
 
-      try {
-        const stored = JSON.parse(localStorage.getItem('motion_house_bookings') || '[]');
-        stored.push({
-          id: generatedId,
-          ...formData,
-          createdAt: new Date().toISOString(),
-        });
-        localStorage.setItem('motion_house_bookings', JSON.stringify(stored));
-      } catch (err) {
-        console.warn('Local storage write skipped', err);
-      }
-    }, 1200);
+    setIsSubmitting(false);
+    if (error) {
+      console.error('Motion House booking submission failed:', error.message);
+      setErrors({ submit: 'We could not save your booking right now. Please try again in a moment.' });
+      return;
+    }
+
+    setBookingRef(generatedId);
+    setIsSuccess(true);
   };
 
   const handleDownloadCalendar = () => {
@@ -133,7 +138,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
 
           <div className="mt-4 inline-flex items-center gap-2 text-xs font-mono text-[#3D271D] bg-[#FFFDFB] border border-[#E5D9CB] px-4 py-2 rounded-full shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8C5535]" />
-            <span>Studio Demo Mode: Form submissions are simulated locally with instant passes.</span>
+            <span>Secure booking requests are saved to our booking system.</span>
           </div>
         </div>
 
@@ -158,7 +163,7 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
                 <span className="text-[#26160F] font-mono font-bold bg-[#F3ECE2] px-2 py-0.5 rounded border border-[#E5D9CB]">
                   {bookingRef}
                 </span>.
-                A confirmation has been simulated for {formData.email}.
+                Your booking request has been saved. The studio team can follow up at {formData.email}.
               </p>
 
               {/* Digital Pass Ticket Card */}
@@ -357,7 +362,10 @@ export const BookingSection: React.FC<BookingSectionProps> = ({
               </div>
 
               <div className="pt-4">
-                <button
+                {errors.submit && (
+                <p role="alert" className="mb-3 text-sm text-red-600">{errors.submit}</p>
+              )}
+              <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full py-4 bg-[#26160F] hover:bg-[#3D271D] text-[#FAF6F0] font-bold uppercase tracking-widest text-sm rounded-xl shadow-xl shadow-[#26160F]/20 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
