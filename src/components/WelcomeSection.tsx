@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Zap } from 'lucide-react';
+import studioBattleCypherImage from '../assets/images/studio_battle_cypher_1792512604823.jpg';
 
 interface WelcomeSectionProps {
   onLearnMore: () => void;
@@ -74,7 +75,7 @@ export const WelcomeSection: React.FC<WelcomeSectionProps> = ({ onLearnMore }) =
           <div className="lg:col-span-5 flex flex-col gap-6">
             <div className="relative rounded-xl overflow-hidden border border-[#E5D9CB] group shadow-xl shadow-[#26160F]/5">
               <img
-                src="/src/assets/images/studio_battle_cypher_1792512604823.jpg"
+                src={studioBattleCypherImage}
                 alt="Motion House studio dancers during evening cypher and workshop"
                 referrerPolicy="no-referrer"
                 className="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
