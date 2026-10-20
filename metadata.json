@@ -1,0 +1,6 @@
+{
+  "name": "Motion House — Dance Academy",
+  "description": "Premium urban dance academy offering hip-hop, contemporary, Bollywood, jazz funk, and choreography training. Feel the beat. Own the floor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Barlow Condensed", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+  --color-ivory: #FAF6F0;
+  --color-ivory-soft: #F3ECE2;
+  --color-mocha: #26160F;
+  --color-mocha-light: #3D271D;
+  --color-mocha-warm: #8C5535;
+  --color-border-ivory: #E5D9CB;
+}
+
+/* Custom cinematic grain and ambient styles */
+.bg-grain {
+  background-image: radial-gradient(rgba(38, 22, 15, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(38, 22, 15, 0.3);
+  color: transparent;
+}
+
+.text-stroke-mocha {
+  -webkit-text-stroke: 1px rgba(38, 22, 15, 0.7);
+  color: transparent;
+}
+
+/* Hide scrollbars for clean filter strips */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
