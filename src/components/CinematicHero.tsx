@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw, Volume2, FastForward, Film, Sparkles, ArrowDown } from 'lucide-react';
 import { studioBeat } from '../utils/audioBeat';
+import studioGlassDoorsImage from '../assets/images/studio_glass_doors_1792513153794.jpg';
+import dancersGlidePastImage from '../assets/images/dancers_glide_past_1792513154361.jpg';
+import heroDanceStudioImage from '../assets/images/hero_dance_studio_1792512583638.jpg';
 
 interface CinematicHeroProps {
   onExploreClasses: () => void;
@@ -112,7 +115,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onExploreClasses, 
           }}
         >
           <img
-            src="/src/assets/images/studio_glass_doors_1792513153794.jpg"
+            src=studioGlassDoorsImage
             alt="Outside corridor looking through glass doors into dance studio"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover brightness-95 contrast-110"
@@ -129,7 +132,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onExploreClasses, 
           }}
         >
           <img
-            src="/src/assets/images/dancers_glide_past_1792513154361.jpg"
+            src=dancersGlidePastImage
             alt="Camera gliding past dancers performing synchronized footwork"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover brightness-90 contrast-115"
@@ -146,7 +149,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({ onExploreClasses, 
           }}
         >
           <img
-            src="/src/assets/images/hero_dance_studio_1792512583638.jpg"
+            src=heroDanceStudioImage
             alt="Wide cinematic master shot of 8-10 dancers synchronized in studio"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover brightness-85 contrast-110"
