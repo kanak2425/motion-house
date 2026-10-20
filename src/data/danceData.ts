@@ -1,3 +1,12 @@
+import danceBollywoodImage from '../assets/images/dance_bollywood_1792512584904.jpg';
+import danceContemporaryImage from '../assets/images/dance_contemporary_1792512584916.jpg';
+import danceHipHopImage from '../assets/images/dance_hiphop_1792512583386.jpg';
+import heroDanceStudioImage from '../assets/images/hero_dance_studio_1792512583638.jpg';
+import studioBattleCypherImage from '../assets/images/studio_battle_cypher_1792512604823.jpg';
+import instructorMarcusImage from '../assets/images/instructor_marcus_1792512584445.jpg';
+import instructorAnanyaImage from '../assets/images/instructor_ananya_1792512603231.jpg';
+import instructorDevImage from '../assets/images/instructor_dev_1792512603573.jpg';
+
 export interface DanceStyle {
   id: string;
   name: string;
@@ -79,7 +88,7 @@ export const DANCE_STYLES: DanceStyle[] = [
       'Master foundational grooves, bounce, poppin’ textures, and fast-paced commercial choreography straight from urban street culture.',
     curriculum: ['Foundational bounce & rocking', 'Body isolations & textures', 'Musicality & micro-timing', 'Performance stage presence'],
     bpm: '85 – 105 BPM',
-    image: '/src/assets/images/dance_hiphop_1792512583386.jpg',
+    image: danceHipHopImage,
     accentColor: '#26160F',
   },
   {
@@ -91,7 +100,7 @@ export const DANCE_STYLES: DanceStyle[] = [
       'Blend balletic alignment with floorwork, breath release, and dynamic weight shifts to express personal stories through uncaged movement.',
     curriculum: ['Floor transitions & rolls', 'Weight transfers & suspension', 'Spinal articulation', 'Improvisation & narrative flow'],
     bpm: '65 – 95 BPM',
-    image: '/src/assets/images/dance_contemporary_1792512584916.jpg',
+    image: danceContemporaryImage,
     accentColor: '#4A2E20',
   },
   {
@@ -103,7 +112,7 @@ export const DANCE_STYLES: DanceStyle[] = [
       'Explosive energy merging classical Indian folk (Bhangra, Garba, Kathak mudras) with crisp modern street-style choreography.',
     curriculum: ['Facial expressions (Abhinaya)', 'Dynamic footwork & spins', 'Lyrical sync & storytelling', 'High-energy cardio stamina'],
     bpm: '100 – 128 BPM',
-    image: '/src/assets/images/dance_bollywood_1792512584904.jpg',
+    image: danceBollywoodImage,
     accentColor: '#8C5535',
   },
   {
@@ -115,7 +124,7 @@ export const DANCE_STYLES: DanceStyle[] = [
       'The signature style of world tours and music videos. Sharp hits, lyrical extensions, pirouettes, and unapologetic attitude.',
     curriculum: ['Clean diagonal lines & turns', 'Fast syncopated arm hits', 'Floor accents & poses', 'Camera-angle performance'],
     bpm: '110 – 125 BPM',
-    image: '/src/assets/images/hero_dance_studio_1792512583638.jpg',
+    image: heroDanceStudioImage,
     accentColor: '#362016',
   },
   {
@@ -127,7 +136,7 @@ export const DANCE_STYLES: DanceStyle[] = [
       'Break free from choreography. Learn to listen deeply to the bassline, respond to the crowd, and build your own movement vocabulary.',
     curriculum: ['Listening to instrumental layers', 'The art of the cypher circle', 'Call-and-response dynamics', 'Mental freedom in dance'],
     bpm: '80 – 120 BPM',
-    image: '/src/assets/images/studio_battle_cypher_1792512604823.jpg',
+    image: studioBattleCypherImage,
     accentColor: '#26160F',
   },
   {
@@ -139,7 +148,7 @@ export const DANCE_STYLES: DanceStyle[] = [
       'Torch calories and build core agility with non-stop rhythmic movement set to international afrobeat, funk, and electronic beats.',
     curriculum: ['Core stability & balance', 'Cardio endurance bursts', 'Active dynamic stretching', 'Full-body tone & rhythm'],
     bpm: '120 – 135 BPM',
-    image: '/src/assets/images/dance_hiphop_1792512583386.jpg',
+    image: danceHipHopImage,
     accentColor: '#6B3F27',
   },
 ];
@@ -276,7 +285,7 @@ export const INSTRUCTORS: Instructor[] = [
     specialty: 'Hip-Hop, Krump & Isolations',
     experience: '11+ Years International',
     bio: 'Trained between Los Angeles and London underground dance circuits. Marcus has choreographed commercial tours, global brand campaigns, and coached national crew champions.',
-    image: '/src/assets/images/instructor_marcus_1792512584445.jpg',
+    image: instructorMarcusImage,
     signatureStyle: 'Heavy bass pocket, explosive floor glides & micro-isolations',
     quote: 'Dance is not about keeping up with the tempo; it is about making the tempo live inside your bones.',
   },
@@ -287,7 +296,7 @@ export const INSTRUCTORS: Instructor[] = [
     specialty: 'Contemporary, Floorwork & Release',
     experience: '9+ Years Performing Arts',
     bio: 'Former principal soloist with the National Dance Collective and Juilliard summer fellowship alum. Ananya teaches dancers how to harness breath, gravity, and vulnerable storytelling.',
-    image: '/src/assets/images/instructor_ananya_1792512603231.jpg',
+    image: instructorAnanyaImage,
     signatureStyle: 'Effortless floor transitions, expansive aerial extensions & breath sync',
     quote: 'When your body stops resisting gravity, your true movement language begins.',
   },
@@ -298,7 +307,7 @@ export const INSTRUCTORS: Instructor[] = [
     specialty: 'Bollywood Fusion, Bhangra & Urban Funk',
     experience: '8+ Years Stage & Screen',
     bio: 'With over 40 million views on commercial choreography projects, Dev transforms theatrical Indian dance traditions into electrifying, modern studio anthems.',
-    image: '/src/assets/images/instructor_dev_1792512603573.jpg',
+    image: instructorDevImage,
     signatureStyle: 'High-energy rhythmic footwork, expressive mudras & infectious joy',
     quote: 'If you can smile, you can bounce. Bollywood is pure celebration of the heart.',
   },
@@ -309,7 +318,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g1',
     title: 'Synchronized Crew Choreography',
     category: 'Choreography',
-    image: '/src/assets/images/hero_dance_studio_1792512583638.jpg',
+    image: heroDanceStudioImage,
     description: 'Advanced cohort perfecting precision timing for the upcoming annual showcase.',
     span: 'col-span-1 md:col-span-2',
   },
@@ -317,7 +326,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g2',
     title: 'The Cypher Underground',
     category: 'Battles',
-    image: '/src/assets/images/studio_battle_cypher_1792512604823.jpg',
+    image: studioBattleCypherImage,
     description: 'Friday night open cyphers where students test freestyle improvisation in the circle.',
     span: 'col-span-1 md:col-span-2',
   },
@@ -325,7 +334,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g3',
     title: 'Contemporary Weight & Release',
     category: 'Practice',
-    image: '/src/assets/images/dance_contemporary_1792512584916.jpg',
+    image: danceContemporaryImage,
     description: 'Exploring floor-to-air elevation and momentum in our naturally lit Studio C.',
     span: 'col-span-1',
   },
@@ -333,7 +342,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g4',
     title: 'Urban Hip-Hop Pocket Practice',
     category: 'Choreography',
-    image: '/src/assets/images/dance_hiphop_1792512583386.jpg',
+    image: danceHipHopImage,
     description: 'Isolating bass kick dynamics in our timber-floor acoustic studio.',
     span: 'col-span-1',
   },
@@ -341,7 +350,7 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 'g5',
     title: 'Bollywood Fusion Energy',
     category: 'Practice',
-    image: '/src/assets/images/dance_bollywood_1792512584904.jpg',
+    image: danceBollywoodImage,
     description: 'Celebratory rhythms blending folk footwork with modern commercial punch.',
     span: 'col-span-1 md:col-span-2',
   },
